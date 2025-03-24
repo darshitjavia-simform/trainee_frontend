@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# Expense Tracker Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-based frontend for the Expense Tracker application.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+1. Clone & Install
+```bash
+# Clone repository
+git clone https://github.com/darshit-javia/expense-tracker.git
+cd expense-tracker2/trainee_frontend
 
-### `npm start`
+# Install dependencies
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Environment Setup
+```bash
+# Copy environment file
+cp .env.example .env
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Configure environment variables
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_ENV=development
+```
 
-### `npm test`
+3. Start Development
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Development Guide
 
-### `npm run build`
+### Branch Management
+```bash
+# Create feature branch
+git checkout -b feature/new-feature
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Create bugfix branch
+git checkout -b bugfix/issue-description
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Commit Convention
+```bash
+# Feature
+git commit -m "feat: add expense form"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Bug fix
+git commit -m "fix: correct date format"
 
-### `npm run eject`
+# Documentation
+git commit -m "docs: update README"
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React 18
+- TypeScript
+- Chart.js
+- Axios
+- React Router DOM
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📋 Requirements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js ≥ 14
+- npm ≥ 6
 
-## Learn More
+## 🚀 Development
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Install dependencies
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Start development server
+npm start
 
-### Code Splitting
+# Run tests
+npm test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Build for production
+npm run build
+```
 
-### Analyzing the Bundle Size
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+src/
+├── components/        # Reusable components
+├── pages/            # Route components
+├── services/         # API services
+├── utils/            # Helper functions
+└── App.tsx           # Main component
+```
 
-### Making a Progressive Web App
+## 📚 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Command | Description |
+|---------|-------------|
+| `npm start` | Run development server |
+| `npm test` | Run test suite |
+| `npm run build` | Build for production |
+| `npm run lint` | Run linter |
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Troubleshooting
 
-### Deployment
+Common issues and solutions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. API Connection
+```bash
+# Check API status
+curl http://localhost:5000/health
 
-### `npm run build` fails to minify
+# Verify environment variables
+echo $REACT_APP_API_URL
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Build Issues
+```bash
+# Clear cache
+npm clean-cache
+
+# Rebuild node modules
+rm -rf node_modules
+npm install
+```
+
+
+
