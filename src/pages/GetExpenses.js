@@ -5,7 +5,7 @@ const GetExpenses = () => {
   const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/expenses")
+    axios.get("http://localhost:5001/expenses")
       .then(response => setExpenses(response.data))
       .catch(error => console.error(error));
   }, []);

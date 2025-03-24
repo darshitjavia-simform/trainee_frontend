@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddExpense = () => {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/expense", { name, amount: parseFloat(amount) });
+    await axios.post(`${process.env.REACT_APP_API_URL}/expense`, { 
+      name, 
+      amount: parseFloat(amount) 
+    });
     setName("");
     setAmount("");
     alert("Expense Added!");
+    navigate("/");
   };
 
   return (
