@@ -5,7 +5,8 @@ const GetExpenses = () => {
   const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5001/expenses")
+    const apiUrl = `${process.env.REACT_APP_API_URL}/expenses`;
+    axios.get(apiUrl)
       .then(response => setExpenses(response.data))
       .catch(error => console.error(error));
   }, []);

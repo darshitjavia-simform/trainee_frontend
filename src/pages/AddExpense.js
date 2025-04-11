@@ -9,14 +9,31 @@ const AddExpense = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`${process.env.REACT_APP_API_URL}/expense`, { 
-      name, 
-      amount: parseFloat(amount) 
-    });
-    setName("");
-    setAmount("");
-    alert("Expense Added!");
-    navigate("/");
+    const apiUrl = `${process.env.REACT_APP_API_URL}/expenses`;
+    
+    if (!name || !amount) {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    try {
+        const response = await axios.post(apiUrl, { 
+            name, 
+            amount: parseFloat(amount) 
+        }, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log('Response:', response.data);
+        setName("");
+        setAmount("");
+        alert("Expense Added!");
+        navigate("/");
+    } catch (error) {
+        console.error('Error:', error.response?.data || error.message);
+        alert(`Failed to add expense: ${error.response?.data?.error || error.message}`);
+    }
   };
 
   return (
